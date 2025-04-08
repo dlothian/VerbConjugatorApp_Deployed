@@ -77,12 +77,12 @@ def argsCheck(args):
         f.close()
     except OSError:
         print("Input file '{}' not found".format(args.input_file))
-        exit()
+        exit(1)
     input_file = args.input_file
 
     if not input_file.endswith(".csv"):
             print("Input file '{}' have comma seperated values and a .csv extension".format(input_file))
-            exit()
+            exit(1)
 
     if args.order:
         order_file = args.order
@@ -91,11 +91,11 @@ def argsCheck(args):
             f.close()
         except OSError:
             print("Order file '{}' not found".format(order_file))
-            exit()
+            exit(1)
         
         if not order_file.endswith(".csv"):
             print("Order file '{}' have comma seperated values and a .csv extension".format(order_file))
-            exit()
+            exit(1)
         
     return input_file, order_file
 
