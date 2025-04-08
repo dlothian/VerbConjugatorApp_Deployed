@@ -8,6 +8,7 @@ This project requires:
 - [docker-compose](https://docs.docker.com/compose/) 1.29.2
 - python 3
 - pip 3
+- something else
 
 
 
