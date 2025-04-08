@@ -26,15 +26,12 @@ jobs:
       - name: Install and Build 🔧
         run: |
           pip install --upgrade pip==24.0
-          cd DataBuilder/
           pip install -r requirements.txt
-          python src/main.py -f langs/french/inputfile_fr.csv -o langs/french/order_fr.csv -tt -c --auto-place
-          cd ../VerbApp
-          npm cache clean --force
+          python DataBuilder/src/main.py -f Data/inputfile.csv -o Data/order.csv -tt -c --auto-place
+          cd VerbApp
           npm install
           npm install -g ionic
-          echo ionic version "$(ionic --version)"
-          ionic build --prod -- --base-href ./ --output-path=deploy/
+          ionic build --prod -- --base-href ./ --output-path=../deploy/
 
 
 
@@ -42,4 +39,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: VerbApp/deploy # The folder the action should deploy.
+          folder: deploy # The folder the action should deploy.
