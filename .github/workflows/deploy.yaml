@@ -26,9 +26,10 @@ jobs:
       - name: Install and Build 🔧
         run: |
           pip install --upgrade pip==24.0
-          pip install -r DataBuilder/requirements.txt
-          python DataBuilder/src/main.py -f Data/inputfile.csv -o Data/order.csv -tt -c --auto-place
-          cd VerbApp
+          cd DataBuilder/
+          pip install -r requirements.txt
+          python src/main.py -f ../Data/inputfile.csv -o ../Data/order.csv -tt -c --auto-place
+          cd ../VerbApp
           npm install
           npm install -g ionic
           ionic build --prod -- --base-href ./ --output-path=../deploy/
