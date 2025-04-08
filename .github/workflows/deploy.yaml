@@ -31,7 +31,7 @@ jobs:
           python src/main.py -f langs/french/inputfile_fr.csv -o langs/french/order_fr.csv -tt -c --auto-place
           cd ../VerbApp
           npm install
-          npm install -g ionic
+          npm install -g ionic@6.20.1
           ionic build --prod -- --base-href ./ --output-path=deploy/
 
 
