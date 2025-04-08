@@ -26,7 +26,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           pip install --upgrade pip==24.0
-          pip install -r requirements.txt
+          pip install -r DataBuilder/requirements.txt
           python DataBuilder/src/main.py -f Data/inputfile.csv -o Data/order.csv -tt -c --auto-place
           cd VerbApp
           npm install
