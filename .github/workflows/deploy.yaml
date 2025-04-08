@@ -32,7 +32,8 @@ jobs:
           cd ../VerbApp
           npm cache clean --force
           npm install
-          npm install -g ionic@6.20.1
+          npm install -g ionic
+          echo ionic version "$(ionic --version)"
           ionic build --prod -- --base-href ./ --output-path=deploy/
 
 
