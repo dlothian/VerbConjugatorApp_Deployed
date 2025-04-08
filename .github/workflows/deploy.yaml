@@ -21,10 +21,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           # Semantic version range syntax or exact version of a Python version
-          python-version: '3.8.10'
+          python-version: '3.8.1'
 
       - name: Install and Build 🔧
         run: |
+          pip install --upgrade pip==24.0
           cd DataBuilder/
           pip install -r requirements.txt
           python src/main.py -f langs/french/inputfile_fr.csv -o langs/french/order_fr.csv -tt -c --auto-place
